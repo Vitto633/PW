@@ -1,11 +1,23 @@
 public class Tecnico {
-    public String nome;
+    private String nome;
 
-    public boolean realizarManutencao(boolean feito){
+    public Tecnico(String nome) {
+        this.setNome(nome);
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public boolean realizarManutencao(boolean feito) {
         return feito;
     }
 
-    public float custearServico(float preco){
+    public double custearServico(double preco) {
         return preco;
     }
 }

@@ -1,20 +1,30 @@
 public class NotaFiscal {
-    public float valorDaManutencao;
+    private double valorManutencao;
 
-    public void exibeNota(){
-        System.out.println("+----------------+");
-        System.out.println("| NOTA FISCAL |");
-        System.out.println("|               PAGO|");
-        System.out.println("+----------------+");
+    public NotaFiscal(double valorManutencao) {
+        this.valorManutencao = valorManutencao;
     }
 
-    public void verificaPagamento(float valorPago){
-        if(boolean(valorPago) == true){
-            System.out.println("Situacao: pago");
-        }
-        else{
-            System.out.println("Situacao: nao pago");
-        }
+    public double getValorManutencao() {
+        return valorManutencao;
     }
 
+    public void setValorManutencao(double valorManutencao) {
+        this.valorManutencao = valorManutencao;
+    }
+
+    public void exibeNota() {
+        System.out.println("+---------------+");
+        System.out.println("| NOTA FISCAL   |");
+        System.out.println("|      PAGO     |");
+        System.out.println("+---------------+");
+    }
+
+    public void verificaPagamento(boolean valorPago) {
+        if (valorPago) {
+            System.out.println("\n Situação: Pago");
+        } else {
+            System.out.println("\n Situação: não pago");
+        }
+    }
 }
