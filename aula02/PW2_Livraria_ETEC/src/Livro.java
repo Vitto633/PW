@@ -1,8 +1,12 @@
+import java.sql.SQLOutput;
+
 public class Livro {
+
     private String titulo;
     private String autor;
-    private String editora;
+    private Editora editoraLivro = new Editora();
     private float preco;
+    public TipoCapaEnum tipoDaCapa = new TipoCapaEnum();
     private String resumo;
     public String getTitulo(){
         return this.titulo;
@@ -16,19 +20,31 @@ public class Livro {
     public void setAutor(String autor){
         this.autor = autor;
     }
-    public String getEditora(){
-        return this.editora;
+
+    public Editora getEditoraLivro() {
+        return editoraLivro;
     }
-    public void setEditora(String editora){
-        this.editora = editora;
+
+    public TipoCapaEnum getTipoDaCapa(){
+        return this.tipoDaCapa;
+    }
+
+    public void setTipoDaCapa(TipoCapaEnum tipoDaCapa){
+        this.tipoDaCapa = tipoDaCapa;
+    }
+
+    public void setEditoraLivro(Editora editoraLivro) {
+        this.editoraLivro = editoraLivro;
     }
 
     public void status(){
         System.out.println("titulo: " + this.getTitulo());
         System.out.println("autor: " + this.getAutor());
-        System.out.println("editora: " + this.getEditora());
+        System.out.println("nome da editora: " + this.getEditoraLivro().getNomeEditora());
+        System.out.println("nomde do site: " + this.getEditoraLivro().getSite());
         System.out.println("resumo: " + this.getResumo());
         System.out.println("preco: " + this.getPreco());
+        System.out.println("tipo da capa: " + this.getTipoDaCapa());
     }
     public float getPreco(){
         return this.preco;
